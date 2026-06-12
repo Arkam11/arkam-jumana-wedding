@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@300;400;700&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --navy: #1B2A6B;
+  --navy-dark: #141F4F;
+  --navy-light: #1F3D8F;
+  --gold: #D4A96A;
+  --gold-dark: #B8965A;
+  --gold-light: #E8C98A;
+  --peach: #E8C4A0;
+  --peach-dark: #D4A980;
+  --peach-light: #F5E6D3;
+  --ivory: #F7F0E6;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Lato', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.velvet-bg {
+  position: relative;
+  background-color: var(--navy);
+}
+
+.velvet-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+.velvet-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+.gold-text {
+  color: var(--gold);
+}
+
+.gold-border {
+  border-color: var(--gold);
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--navy-dark); }
+::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 2px; }
